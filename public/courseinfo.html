@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>Dark Pro - About</title>
+<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="/public/js/courses.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<!-- Main Body Starts Here -->
+<div id="main_body">
+  <!-- Top Part Starts Here -->
+  <div id="top_part">
+    <!-- Top Part Image Starts Here -->
+    <div id="top_part_image">
+      <!-- Logo Part Starts Here -->
+      <div id="main_logo"> <a href="#"><img src="images/main_logo.png"  alt=""  /></a> </div>
+      <!-- Logo Part Ends Here -->
+    </div>
+    <!-- Top Part Image Ends Here -->
+    <!-- Main Menu Starts Here -->
+    <div id="main_menu_bg">
+      <!-- Main Menu Body Starts Here -->
+      <div id="main_menu_body">
+        <!-- Menu Links Starts Here -->
+        <div class="menu_links"> <a href="/" class="menu_active">HOME</a><span class="menu_border">&nbsp;</span> <a href="courses.html" class="menu_links">COURSES MANAGER</a><span class="menu_border">&nbsp;</span> <a href="students.html" class="menu_links">USERS MANAGER</a>
+        <span class="menu_border">&nbsp;</span></a><a href="about.html" class="menu_links">ABOUT</a><span class="menu_border">&nbsp;</span><a href="contact.html" class="menu_links">CONTACT</a>
+        </span></div>
+        <!-- Menu Links Ends Here -->
+      </div>
+      <!-- Main Menu Body Ends Here -->
+    </div>
+    <!-- Main Menu Ends Here -->
+  </div>
+  <!-- Top Part Ends Here -->
+  <!-- Content Body Starts Here -->
+  <div id="inner_content_body">
+    <!-- Left Content Body Starts Here -->
+    <div class="left_content_body">
+      <!-- Heading -->
+      <p class="page_title" id="title">  </p>
+      <!-- Heading -->
+      <p id="description"></p>  
+
+      <br>
+
+      </br>
+
+      <div>
+      <p class="page_sub_title"> תגובות </p>
+      <ul dir="rtl" id="commentsList">
+
+      </ul>
+
+      </div>
+
+     <div class="contact">
+            <form id="contactForm"  method="post" action="#">
+
+              <p class="page_sub_title" style="margin-top:20px;"> הוסף תגובה </p>
+              <p>
+                <textarea rows="3" cols="50" id="comment" name="message"></textarea>
+              </p>
+              <p style="margin-top:20px;">
+                <input type="image" src="images/send_btn.png" name="submit" id="submitcomment"  />
+              </p>
+            </form>
+      </div>
+
+   
+    </div>
+    <!-- Left Content Body Ends Here -->
+    <!-- Right Content Body Starts Here -->
+    <div class="right_content_body">
+      <!-- More Links Starts here -->
+      <!-- Heading -->
+      <p class="page_sub_title"> דירוג האתר </p>
+      <!-- Heading -->
+      <div>
+           <ul dir="rtl" id="ratingList" style="list-style-type: none;">
+            <p style="float:right;padding-left:20px;">רמת קושי</p>
+              <li id="avgDifficulty"></li>
+               <p style="float:right;padding-left:20px;">רמת אפקטיביות</p>
+              <li id="avgEffectivness"></li>
+               <p style="float:right;padding-left:20px;">רמת עומס</p>
+              <li id="avgIntensity"></li>
+          </ul>
+      </div>
+      <!-- More Links Ends Here -->
+
+      <br>
+
+      <div>
+      <p class="page_sub_title"> דרג את הקורס </p>
+            <div class="container">
+
+            <form id="ratingForm"  method="post" action="#">
+
+              <p  style="float:right;padding-left:20px;">רמת קושי</p>
+                <select name="Difficulty" id="Difficulty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <br><br>
+                <p  style="float:right;padding-left:20px;">אינטנסיביות</p>
+                <select name="Intensity" id="Intensity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <br><br>
+                <p style="float:right;padding-left:20px;">אפקטיביות</p>
+                <select name="Effectivness" id="Effectivness">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+              </p>
+              <p style="margin-top:20px; float:right">
+                <input type="image" src="images/send_btn.png" name="submit" id="submitrating"  />
+              </p>
+                <p id="ratingSubmitted"></p>
+            </form>
+
+          </div> 
+          <!-- end container -->
+      </div>
+
+
+    </div>
+    <!-- Right Content Body Ends here -->
+    <!-- Clear -->
+    <div class="clear"> </div>
+    <!-- Clear -->
+  </div>
+  <!-- Content Body Ends Here -->
+  <!--Footer Starts Here -->
+  <div id="footer">
+      <div class="right" style="padding-right:30px;"> CourseNet &copy; 2013 <a style="color:#ffffff;" href="#">Aviv Shafir, Daniel Rahamim, Daniel Cohen</a></div>
+  <!-- Footer Ends Here -->
+  </div>
+  <!-- Footer Ends Here -->
+</div>
+<!-- Main Body Ends Here -->
+</body>
+
+
+
+<script>
+
+var jsonCourse = null;
+
+$.urlParam = function(name){
+    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+function decode(str) {
+     return decodeURIComponent(str.replace(/\+/g,  " "));
+}
+
+
+$( document ).ready(function() {
+    
+    console.log($.urlParam('courseNumber')); 
+    var courseNumber = $.urlParam('courseNumber');
+
+    $.get("courses/getCourseByNumber/" + courseNumber , function (course) 
+    { 
+
+        //parse string to json format
+       jsonCourse = $.parseJSON(course);
+
+       console.log("course number = " +  jsonCourse.courseNumber);
+       console.log("course title = " +  jsonCourse.title);
+       console.log("comments : " + jsonCourse.comments);
+
+        //insert course details to page
+        $("#title").append(jsonCourse.title);
+        $("#description").append(jsonCourse.description);  
+
+        for (var i in jsonCourse.comments) {
+            $("#commentsList").append("<li>" + jsonCourse.comments[i].text + "</li>"); 
+        }
+
+        var avgDifficulty = jsonCourse.rating.avgDifficulty;
+        var avgEffectivness = jsonCourse.rating.avgEffectivness;
+        var avgIntensity = jsonCourse.rating.avgIntensity;
+        
+        console.log('avgDifficulty : ' + avgDifficulty);
+        console.log('avgEffectivness : ' + avgEffectivness);
+        console.log('avgIntensity : ' + avgIntensity);
+
+        $("#avgDifficulty").html(avgDifficulty); 
+        $("#avgEffectivness").html(avgEffectivness);  
+        $("#avgIntensity").html(avgIntensity);  
+
+    });
+
+  
+  $("#contactForm").on('submit',function(event){
+
+      event.preventDefault();
+      var comment = $("#comment").val();
+
+      $("#commentsList").append("<li>" + comment + "</li>");
+
+        var newCommentDoc = {
+          text : comment,
+          date : Date()
+        };
+
+      jsonCourse.comments.push(newCommentDoc);
+      console.log(jsonCourse.comments[0].text);
+      console.log(jsonCourse.comments[0].date);
+      console.log("title : " + jsonCourse.title);
+
+      $.ajax({
+         url: 'courses/' + jsonCourse.title,
+         type: 'PUT',
+         data: {'comments': jsonCourse.comments}, 
+         success: function (data) {
+            $('#courseupdated').html(JSON.stringify(data));
+              console.log("update data = " + JSON.stringify(data));
+          }
+      });
+
+  });
+
+
+});
+
+</script>
+
+
+
+</html>

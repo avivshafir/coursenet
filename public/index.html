@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>CourseNet</title>
+<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<script type="text/javascript" src="js/swfobject/swfobject.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<!-- Main Body Starts Here -->
+<div id="main_body">
+  <!-- Top Part Starts Here -->
+  <div id="top_part">
+    <!-- Top Part Image Starts Here -->
+    <div id="top_part_image">
+      <!-- Logo Part Starts Here -->
+      <div id="main_logo"> <a href="#"><img src="images/main_logo.png"  alt=""  /></a> </div>
+      <!-- Logo Part Ends Here -->
+    </div>
+    <!-- Top Part Image Ends Here -->
+    <!-- Main Menu Starts Here -->
+    <div id="main_menu_bg">
+      <!-- Main Menu Body Starts Here -->
+      <div id="main_menu_body">
+        <!-- Menu Links Starts Here -->
+        <div class="menu_links"> <a href="/" class="menu_active">HOME</a><span class="menu_border">&nbsp;</span> <a href="courses.html" class="menu_links">COURSES MANAGER</a><span class="menu_border">&nbsp;</span> <a href="students.html" class="menu_links">USERS MANAGER</a>
+        <span class="menu_border">&nbsp;</span></a><a href="about.html" class="menu_links">ABOUT</a><span class="menu_border">&nbsp;</span><a href="contact.html" class="menu_links">CONTACT</a>
+        </span></div>
+        <!-- Menu Links Ends Here -->
+      </div>
+      <!-- Main Menu Body Ends Here -->
+    </div>
+    <!-- Main Menu Ends Here -->
+  </div>
+  <!-- Top Part Ends Here -->
+  <!-- Content Body Starts Here -->
+  <div id="content_body">
+    <!-- Home News Starts Here -->
+    <div id="home_news_box">
+      <div class='headers'> קורסי רשות </div> 
+
+
+      <!-- News Ends Here -->
+    </div>
+    <!-- Home News Ends Here -->
+
+
+    <!-- Home Social & Newsletter Part Starts here -->
+    <div id="home_middle_part">
+    
+      <div id="testi_home">
+        <div class="headers"> קורסי חובה </div>
+  
+      </div>
+ 
+  </div>
+
+
+  <!-- Clear -->
+  <div class="clear"> </div>
+  <!-- Clear -->
+
+  <!-- Content Body Ends Here -->
+  <!--Footer Starts Here -->
+  <div id="footer">
+      <div class="right" style="padding-right:30px;"> CourseNet &copy; 2013 <a style="color:#ffffff;" href="#">Aviv Shafir, Daniel Rahamim, Daniel Cohen</a></div>
+  <!-- Footer Ends Here -->
+  </div>
+<!-- Main Body Ends Here -->
+</body>
+
+<script>
+
+
+var coursesList = null;
+var listString;
+var i = 0;
+
+function getCourses()
+{
+    $.get("/courses", function (data) 
+    {
+          coursesList = (data);
+          if( coursesList != null)
+          {                      
+            for (var i=0; i < coursesList.length; i++){
+                console.log(coursesList[i]);
+                listString = "<a class='news_head' href=" + "courseinfo.html?courseNumber=" + coursesList[i].courseNumber + "><div class='news_boxes'><div><p class='news_head'> ";
+                listString += coursesList[i].title + "</p><p>"+ coursesList[i].description +"</p></div></div></a>";
+                console.log("listString="+ listString);
+                if(coursesList[i].category == 1){
+                  $('#testi_home').append(listString);
+                }
+                else if(coursesList[i].category == 2){
+                  $('#home_news_box').append(listString);
+                }
+                listString = "";
+              }
+          }  
+    });
+}
+
+
+$( document ).ready(function() {
+    
+  getCourses();
+  
+});
+
+
+</script>
+
+</html>

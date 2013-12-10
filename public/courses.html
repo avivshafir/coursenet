@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="/public/js/jquery1.8.3.js"></script>
+<script src="/public/js/courses.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<title>Working with Courses</title>
+</head>
+
+<body>
+
+<!-- Main Body Starts Here -->
+<div id="main_body">
+  <!-- Top Part Starts Here -->
+  <div id="top_part">
+    <!-- Top Part Image Starts Here -->
+    <div id="top_part_image">
+      <!-- Logo Part Starts Here -->
+      <div id="main_logo"> <a href="#"><img src="images/main_logo.png"  alt=""  /></a> </div>
+      <!-- Logo Part Ends Here -->
+    </div>
+    <!-- Top Part Image Ends Here -->
+    <!-- Main Menu Starts Here -->
+    <div id="main_menu_bg">
+      <!-- Main Menu Body Starts Here -->
+      <div id="main_menu_body">
+        <!-- Menu Links Starts Here -->
+        <div class="menu_links"> <a href="/" class="menu_active">HOME</a><span class="menu_border">&nbsp;</span> <a href="courses.html" class="menu_links">COURSES MANAGER</a><span class="menu_border">&nbsp;</span> <a href="students.html" class="menu_links">USERS MANAGER</a>
+        <span class="menu_border">&nbsp;</span></a><a href="about.html" class="menu_links">ABOUT</a><span class="menu_border">&nbsp;</span><a href="contact.html" class="menu_links">CONTACT</a>
+        </span></div>
+        <!-- Menu Links Ends Here -->
+      </div>
+      <!-- Main Menu Body Ends Here -->
+    </div>
+    <!-- Main Menu Ends Here -->
+  </div>
+  <!-- Top Part Ends Here -->
+  <!-- Content Body Starts Here -->
+  <div id="inner_content_body">
+    <!-- Left Content Body Starts Here -->
+    <div class="left_content_body">
+      <!-- Heading -->
+      <p class="page_title"> Courses Controlling Manager </p>
+      <!-- Heading -->
+      <br />
+      <!-- Form Starts Here -->
+      <div class="contact">
+
+        <form id="getAllCoursesForm"  method="#" action="#">
+          <p class="page_sub_title"> GET ALL COURSES </p>
+          <input type="image" src="images/clear_btn.png" name="clearCourses" id="clearCourses"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="listcourses"></div>
+
+        <form id="getCourseByTitleForm"  method="#" action="#">
+          <p class="page_sub_title"> GET A COURSE BY TITLE</p>
+           Course title:<input type="text" id="title"/><br>
+          <input type="image" src="images/clear_btn.png" name="clearCourseAfterGet" id="clearCourseAfterGet"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="course"></div><br>
+
+
+          <form id="getCourseByNumberForm"  method="#" action="#">
+          <p class="page_sub_title"> GET A COURSE BY COURSE NUMBER</p>
+           Course Number:<input type="text" id="number"/><br>
+          <input type="image" src="images/clear_btn.png" name="clearCourseAfterGet" id="clearCourseAfterGetByNumber"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="courseByNumber"></div><br>
+
+        <form id="addACourseForm"  method="#" action="#">
+          <p class="page_sub_title"> ADD A COURSE TO DATABASE</p>
+          title: <input type="text" id="titleA" name="title"><br>
+          Description: <input type="text" id="description" name="description"><br>
+          Category(1/2): <input type="text" id="category" name="category"><br>
+          Target: <input type="text" id="target" name="target"><br>
+          Points: <input type="text" id="points" name="points"><br>
+          Uniqe Course Number: <input type="text" id="courseNumber" name="courseNumber"><br>
+          <input type="image" src="images/clear_btn.png" name="clearCourseAfterAdd" id="clearCourseAfterAdd"  />
+          <input type="image" src="images/post_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="courseadded"></div><br>
+
+        <form id="updateACourseForm"  method="#" action="#">
+          <p class="page_sub_title"> UPDATE A COURSE</p>
+          Course title to update: <input type="text" id="titleU" name="title"><br>
+          New title: <input type="text" id="newtitle" name="newtitle"><br>
+          New Description: <input type="text" id="descriptionU" name="description"><br>
+          New Category(1/2): <input type="text" id="categoryU" name="category"><br>
+          New Target: <input type="text" id="targetU" name="target"><br>
+          New Points: <input type="text" id="pointsU" name="points"><br>
+          <input type="image" src="images/clear_btn.png" name="clearCourseAfterUpdate" id="clearCourseAfterUpdate"  />
+          <input type="image" src="images/update_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="courseupdated"></div><br>
+
+        <form id="deleteACourseForm"  method="#" action="#">
+          <p class="page_sub_title"> DELETE A COURSE FROM DATABASE</p>
+          Course title: <input type="text" id="titleD" name="title"><br>  
+          <input type="image" src="images/clear_btn.png" name="clearTitleAfterDeleted" id="clearTitleAfterDeleted"  />
+          <input type="image" src="images/delete_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="coursedeleted"></div><br>
+
+        <form id="getCourseByPointsAndCategory"  method="#" action="#">
+          <p class="page_sub_title">GET ALL COURSES BY CATEGORY AND POINTS </p>
+          Course Category: <input type="text" id="categoryS" name="category"><br> 
+          Course Points: <input type="text" id="pointsS" name="points"><br> 
+          <input type="image" src="images/clear_btn.png" name="clearTitleAfterDeleted" id="clearTitleAfterSorted"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="courseByPointsAndCategory"></div><br>
+
+
+        <form id="getCoursesWithNoVotes"  method="#" action="#">
+          <p class="page_sub_title">GET COURSES WITH NO RATING </p>
+          <input type="image" src="images/clear_btn.png" name="clearCoursesNoVotes" id="clearCoursesNoVotes"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="coursesWithNoVotes"></div><br>
+
+
+        <form id="getCourseWithHighestRating"  method="#" action="#">
+          <p class="page_sub_title">GET COURSE WITH HIGHEST RATING </p>
+          <input type="image" src="images/clear_btn.png" name="clearCoursesNoVotes" id="clearHighestRatedCourse"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="highestRatedCourse"></div><br>
+
+
+
+
+      </div>
+      <!-- Form Ends Here -->
+    </div>
+    <!-- Left Content Body Ends Here -->
+    <!-- Right Content Body Starts Here -->
+    <div class="right_content_body">
+      <!-- Contact Starts here -->
+      <!-- Heading -->
+      <p class="page_sub_title"> TECHNOLOGIES </p>
+      <!-- Heading -->
+      <ul class="more_links">
+        <li>JQuery</li>
+        <li>NodeJS</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>AJAX</li>
+      </ul>
+      <br />
+      <!-- Social Starts Here -->
+      <!-- Heading -->
+
+      <!-- Contact Ends Here -->
+    </div>
+    <!-- Right Content Body Ends here -->
+    <!-- Clear -->
+    <div class="clear"> </div>
+    <!-- Clear -->
+  </div>
+  <!-- Content Body Ends Here -->
+  <!--Footer Starts Here -->
+  <div id="footer">
+      <div class="right" style="padding-right:30px;"> CourseNet &copy; 2013 <a style="color:#ffffff;" href="#">Aviv Shafir, Daniel Rahamim, Daniel Cohen</a></div>
+  <!-- Footer Ends Here -->
+  </div>
+  <!-- Footer Ends Here -->
+</div>
+<!-- Main Body Ends Here -->
+
+
+</body>
+</html>

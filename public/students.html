@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="/public/js/jquery1.8.3.js"></script>
+<script src="/public/js/students.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<title>Working with Students</title>
+</head>
+
+<body>
+
+<!-- Main Body Starts Here -->
+<div id="main_body">
+  <!-- Top Part Starts Here -->
+  <div id="top_part">
+    <!-- Top Part Image Starts Here -->
+    <div id="top_part_image">
+      <!-- Logo Part Starts Here -->
+      <div id="main_logo"> <a href="#"><img src="images/main_logo.png"  alt=""  /></a> </div>
+      <!-- Logo Part Ends Here -->
+    </div>
+    <!-- Top Part Image Ends Here -->
+    <!-- Main Menu Starts Here -->
+    <div id="main_menu_bg">
+      <!-- Main Menu Body Starts Here -->
+      <div id="main_menu_body">
+        <!-- Menu Links Starts Here -->
+        <div class="menu_links"> <a href="/" class="menu_active">HOME</a><span class="menu_border">&nbsp;</span> <a href="courses.html" class="menu_links">COURSES MANAGER</a><span class="menu_border">&nbsp;</span> <a href="students.html" class="menu_links">USERS MANAGER</a>
+        <span class="menu_border">&nbsp;</span></a><a href="about.html" class="menu_links">ABOUT</a><span class="menu_border">&nbsp;</span><a href="contact.html" class="menu_links">CONTACT</a>
+        </span></div>
+        <!-- Menu Links Ends Here -->
+      </div>
+      <!-- Main Menu Body Ends Here -->
+    </div>
+    <!-- Main Menu Ends Here -->
+  </div>
+  <!-- Top Part Ends Here -->
+  <!-- Content Body Starts Here -->
+  <div id="inner_content_body">
+    <!-- Left Content Body Starts Here -->
+    <div class="left_content_body">
+      <!-- Heading -->
+      <p class="page_title"> Users Controlling Manager </p>
+      <!-- Heading -->
+      <br />
+      <!-- Form Starts Here -->
+      <div class="contact">
+
+        <form id="getAllStudentsForm"  method="#" action="#">
+          <p class="page_sub_title"> GET ALL STUDENTS </p>
+          <input type="image" src="images/clear_btn.png" name="clearStudents" id="clearStudents"  />
+          <input type="image" src="images/get_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="liststudents"></div>
+
+        <form id="getStudentByUserNameForm"  method="#" action="#">
+        	<p class="page_sub_title"> GET A STUDENT BY USERNAME </p>
+			      <input type="text" id="studentusername"/></br>
+            <input type="image" src="images/clear_btn.png" name="clearStudent" id="clearStudent"  />
+            <input type="image" src="images/get_btn.png" name="submit" id="submit"  />		
+        </form>   
+        <div id="student"></div><br>
+
+
+        <form id="addAStudentForm"  method="#" action="#">
+          <p class="page_sub_title"> ADD A STUDENT TO DATABASE</p>
+			Username(Uniqe): <input type="text" id="username" name="username"><br>
+			Password: <input type="text" id="password" name="password"><br>
+			E-mail: <input type="text" id="email" name="email"><br>
+			School Name: <input type="text" id="schoolname" name="schoolname"><br>
+			Status: <input type="text" id="status" name="status"><br>
+          <input type="image" src="images/clear_btn.png" name="clearAStudentAfterAdd" id="clearAStudentAfterAdd"  />
+          <input type="image" src="images/post_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="studentadded"></div><br>
+
+        <form id="updateAStudentForm"  method="#" action="#">
+          <p class="page_sub_title"> UPDATE A STUDENT</p>
+			Student username to update: <input type="text" id="username_to_update" name="username_to_update"><br>
+			New User Name: <input type="text" id="usernameU" name="username"><br>
+			New PassWord: <input type="text" id="passwordU" name="password"><br>
+			New E-mail: <input type="text" id="emailU" name="email"><br>
+			New School Name: <input type="text" id="schoolnameU" name="schoolname"><br>
+			New Status: <input type="text" id="statusU" name="status"><br>
+          <input type="image" src="images/clear_btn.png" name="clearStudentAfterUpdate" id="clearStudentAfterUpdate"  />
+          <input type="image" src="images/update_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="studentupdated"></div><br>
+
+        <form id="deleteAStudentForm"  method="#" action="#">
+          <p class="page_sub_title"> DELETE A STUDENT FROM DATABASE</p>
+          Student username: <input type="text" id="username_To_delete" name="username_To_delete"><br>
+          <input type="image" src="images/clear_btn.png" name="clearUsernameAfterDeleted" id="clearUsernameAfterDeleted"  />
+          <input type="image" src="images/delete_btn.png" name="submit" id="submit"  />
+        </form>   
+        <div id="studentdeleted"></div><br>
+
+
+      </div>
+      <!-- Form Ends Here -->
+    </div>
+    <!-- Left Content Body Ends Here -->
+    <!-- Right Content Body Starts Here -->
+    <div class="right_content_body">
+      <!-- Contact Starts here -->
+      <!-- Heading -->
+      <p class="page_sub_title"> TECHNOLOGIES </p>
+      <!-- Heading -->
+      <ul class="more_links">
+        <li>JQuery</li>
+        <li>NodeJS</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>AJAX</li>
+      </ul>
+      <br />
+      <!-- Social Starts Here -->
+      <!-- Heading -->
+
+      <!-- Contact Ends Here -->
+    </div>
+    <!-- Right Content Body Ends here -->
+    <!-- Clear -->
+    <div class="clear"> </div>
+    <!-- Clear -->
+  </div>
+  <!-- Content Body Ends Here -->
+  <!--Footer Starts Here -->
+  <div id="footer">
+      <div class="right" style="padding-right:30px;"> CourseNet &copy; 2013 <a style="color:#ffffff;" href="#">Aviv Shafir, Daniel Rahamim, Daniel Cohen</a></div>
+  <!-- Footer Ends Here -->
+  </div>
+  <!-- Footer Ends Here -->
+</div>
+<!-- Main Body Ends Here -->
+
+
+</body>
+</html>

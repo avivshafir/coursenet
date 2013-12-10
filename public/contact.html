@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>CourseNet - Contact</title>
+<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<!--[if lt IE 8.]><link rel="stylesheet" type="text/css" href="css/style-ie.css" /><![endif]-->
+<!--[if lt IE 7.]><link rel="stylesheet" type="text/css" href="css/style-ie6.css" /><![endif]-->
+<!-- Form validation by http://www.TechiePark.com starts here-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+	// validate the contact form when it is submitted
+	$("#contactForm").validate({
+
+		rules: {
+			name: "required",
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			name: "* Please enter your name",
+			email: "* Please enter a valid email address"
+		}
+	});
+});
+</script>
+<style type="text/css">
+#contactForm label.error {
+	padding-left:8px;
+	background-color:#ff0000;
+	color:#ffffff;
+	padding:2px;
+	width: auto;
+	display: inline;
+}
+</style>
+</head>
+<body>
+<!-- Main Body Starts Here -->
+<div id="main_body">
+  <!-- Top Part Starts Here -->
+  <div id="top_part">
+    <!-- Top Part Image Starts Here -->
+    <div id="top_part_image">
+      <!-- Logo Part Starts Here -->
+      <div id="main_logo"> <a href="#"><img src="images/main_logo.png"  alt=""  /></a> </div>
+      <!-- Logo Part Ends Here -->
+    </div>
+    <!-- Top Part Image Ends Here -->
+    <!-- Main Menu Starts Here -->
+    <div id="main_menu_bg">
+      <!-- Main Menu Body Starts Here -->
+      <div id="main_menu_body">
+        <!-- Menu Links Starts Here -->
+        <div class="menu_links"> <a href="/" class="menu_active">HOME</a><span class="menu_border">&nbsp;</span> <a href="courses.html" class="menu_links">COURSES MANAGER</a><span class="menu_border">&nbsp;</span> <a href="students.html" class="menu_links">USERS MANAGER</a>
+        <span class="menu_border">&nbsp;</span></a><a href="about.html" class="menu_links">ABOUT</a><span class="menu_border">&nbsp;</span><a href="contact.html" class="menu_links">CONTACT</a>
+        </span></div>
+        <!-- Menu Links Ends Here -->
+      </div>
+      <!-- Main Menu Body Ends Here -->
+    </div>
+    <!-- Main Menu Ends Here -->
+  </div>
+  <!-- Top Part Ends Here -->
+  <!-- Content Body Starts Here -->
+  <div id="inner_content_body">
+    <!-- Left Content Body Starts Here -->
+    <div class="left_content_body">
+      <!-- Heading -->
+      <p class="page_title"> CONTACT US </p>
+      <!-- Heading -->
+      <br />
+      <!-- Form Starts Here -->
+      <div class="contact">
+        <form id="contactForm"  method="#" action="#">
+          <p> Name <span class="star">*</span> </p>
+          <p>
+            <input type="text" name="name" id="name" value=""/>
+          </p>
+          <p style="margin-top:20px;"> E-Mail <span class="star">*</span> </p>
+          <p>
+            <input type="text" name="email" id="email" value=""/>
+          </p>
+          <p style="margin-top:20px;"> Your Message </p>
+          <p>
+            <textarea rows="3" cols="50" name="message"></textarea>
+          </p>
+          <p style="margin-top:20px;">
+            <input type="image" src="images/send_btn.png" name="submit" id="submit"  />
+          </p>
+        </form>
+      </div>
+      <!-- Form Ends Here -->
+    </div>
+    <!-- Left Content Body Ends Here -->
+    <!-- Right Content Body Starts Here -->
+    <div class="right_content_body">
+      <!-- Contact Starts here -->
+      <!-- Heading -->
+      <p class="page_sub_title"> OUR TEAM </p>
+      <!-- Heading -->
+      <ul class="more_links">
+        <li>AVIV SHAFIR</li>
+        <li>DANIEL RAHAMIN</li>
+        <li>DANIEL COHEN</li>
+      </ul>
+      <br />
+      <!-- Social Starts Here -->
+      <!-- Heading -->
+      <!-- Heading -->
+      <!-- Social Ends Here -->
+      <br />
+      <!-- Testimonial Starts Here -->
+      <!-- Heading -->
+ 
+      <!-- Heading -->
+        <!-- Testimonial Ends here -->
+      <!-- Contact Ends Here -->
+    </div>
+    <!-- Right Content Body Ends here -->
+    <!-- Clear -->
+    <div class="clear"> </div>
+    <!-- Clear -->
+  </div>
+  <!-- Content Body Ends Here -->
+  <!--Footer Starts Here -->
+  <div id="footer">
+      <div class="right" style="padding-right:30px;"> CourseNet &copy; 2013 <a style="color:#ffffff;" href="#">Aviv Shafir, Daniel Rahamim, Daniel Cohen</a></div>
+  <!-- Footer Ends Here -->
+  </div>
+  <!-- Footer Ends Here -->
+</div>
+<!-- Main Body Ends Here -->
+</body>
+</html>
